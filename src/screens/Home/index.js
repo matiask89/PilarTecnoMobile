@@ -3,44 +3,45 @@ import {
     SafeAreaView,
     View, 
     Text,
-    Pressable
+    Pressable,
+    ImageBackground
 } from 'react-native';
 import { styles } from './styles'
 
-export default Home = () => {
+export default Home = (props) => {
 
     return(
         <SafeAreaView style={styles.container}>
-            <View style={styles.mainCont}>
+            <ImageBackground style={styles.mainCont} source={require('../../assets/images/logo-react.png')}>
                 <View style={styles.rowCont}>
                 <Pressable style={[styles.buttonCont, {backgroundColor: 'red'}]}
-                 onPress={()=>alert('boton 1')}>
+                 onPress={()=> alert('Ya estas en home!')}>
                     <Text style={styles.tittle}>
-                        boton 1
+                        Home
                     </Text>
                 </Pressable>
                 <Pressable style={[styles.buttonCont, {backgroundColor: 'blue'}]}
-                 onPress={()=>alert('boton 2')}>
+                 onPress={()=>props.navigation.navigate('Profile')}>
                     <Text style={styles.tittle}>
-                        boton 2
+                        Perfil
                     </Text>
                 </Pressable>
                 </View>
                 <View style={styles.rowCont}>
                 <Pressable style={[styles.buttonCont, {backgroundColor: 'gray'}]}
-                 onPress={()=>alert('boton 3')}>
+                 onPress={()=>props.navigation.navigate('List')}>
                     <Text style={styles.tittle}>
-                        boton 3
+                        Lista
                     </Text>
                 </Pressable>
                 <Pressable style={[styles.buttonCont, {backgroundColor: 'green'}]}
-                 onPress={()=>alert('boton 4')}>
+                 onPress={()=>props.navigation.navigate('Mapa')}>
                     <Text style={styles.tittle}>
-                        boton 4
+                        Mapa
                     </Text>
                 </Pressable>
                 </View>
-            </View>         
+            </ImageBackground>         
         </SafeAreaView>
     )
 }
