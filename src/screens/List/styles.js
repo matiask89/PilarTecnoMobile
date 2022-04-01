@@ -32,7 +32,6 @@ export const styles = StyleSheet.create({
       },
       tittle: {
         width: '100%',
-        backgroundColor: 'lightblue',
         textAlign: 'center',
         fontSize: 20,
         fontWeight: 'bold',

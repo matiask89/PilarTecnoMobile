@@ -4,14 +4,22 @@ import {
     View, 
     Text,
     Pressable,
-    ImageBackground
+    ImageBackground,
+    Dimensions
 } from 'react-native';
+import Header from '../../components/Header';
+import { theme } from '../constants';
 import { styles } from './styles'
+
+const height = Dimensions.get('window').height
 
 export default Home = (props) => {
 
     return(
         <SafeAreaView style={styles.container}>
+            <View style={styles.rowCont}>
+                    <Header />
+            </View>
             <ImageBackground style={styles.mainCont} source={require('../../assets/images/logo-react.png')}>
                 <View style={styles.rowCont}>
                 <Pressable style={[styles.buttonCont, {backgroundColor: 'red'}]}
@@ -21,7 +29,7 @@ export default Home = (props) => {
                     </Text>
                 </Pressable>
                 <Pressable style={[styles.buttonCont, {backgroundColor: 'blue'}]}
-                 onPress={()=>props.navigation.navigate('Profile')}>
+                 onPress={()=>props.navigation.navigate('Perfil')}>
                     <Text style={styles.tittle}>
                         Perfil
                     </Text>
@@ -29,7 +37,7 @@ export default Home = (props) => {
                 </View>
                 <View style={styles.rowCont}>
                 <Pressable style={[styles.buttonCont, {backgroundColor: 'gray'}]}
-                 onPress={()=>props.navigation.navigate('List')}>
+                 onPress={()=>props.navigation.navigate('Lista')}>
                     <Text style={styles.tittle}>
                         Lista
                     </Text>
@@ -45,3 +53,4 @@ export default Home = (props) => {
         </SafeAreaView>
     )
 }
+

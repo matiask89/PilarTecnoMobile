@@ -3,7 +3,7 @@ import { StyleSheet, Dimensions } from 'react-native';
 const width = Dimensions.get('window').width;
 const height = Dimensions.get('window').height;
 
-export const mapastyles = StyleSheet.create({
+export const styles = StyleSheet.create({
     container: {
         flex: 1,
         alignItems: 'center',
@@ -32,6 +32,7 @@ export const mapastyles = StyleSheet.create({
       },
       tittle: {
         width: '100%',
+        backgroundColor: 'lightblue',
         textAlign: 'center',
         fontSize: 20,
         fontWeight: 'bold',
