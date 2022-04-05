@@ -18,6 +18,8 @@ const height = Dimensions.get('window').height;
 
 const Header = (props) => {
 
+const {leftIcon, leftAction, tittle} = props
+
 const docsNavigate = () => {
   Linking.openURL(`https://reactnativeelements.com/docs/${props.view}`);
 };
@@ -29,10 +31,22 @@ const playgroundNavigate = () => {
 return (
   <SafeAreaProvider>
     <HeaderRNE
-      leftComponent={{
-        icon: 'menu',
-        color: '#fff',
-      }}
+      leftComponent={
+        
+          leftIcon?
+           <TouchableOpacity
+              style={{ marginLeft: 10 }}
+              onPress={leftAction}
+            >
+            <Icon type="font-awesome" name={leftIcon} color="white" />
+            </TouchableOpacity>
+           
+          :
+          {
+            icon: 'menu',
+            color: '#fff'
+          }
+        }
       rightComponent={
           <View style={styles.headerRight}>
             <TouchableOpacity onPress={docsNavigate}>
@@ -42,11 +56,10 @@ return (
               style={{ marginLeft: 10 }}
               onPress={playgroundNavigate}
             >
-              <Icon type="antdesign" name="rocket1" color="white" />
             </TouchableOpacity>
           </View>
       }
-      centerComponent={{ text: 'Matias', style: styles.heading }}
+      centerComponent={{ text:tittle?tittle: 'Matias', style: styles.heading }}
     />
   </SafeAreaProvider>
 );

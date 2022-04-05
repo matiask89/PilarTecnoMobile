@@ -15,7 +15,6 @@ export const styles = StyleSheet.create({
         flexDirection: 'column',
         alignItems: 'center',
         justifyContent: 'center',
-        backgroundColor: '#3399ff'
       },
       rowCont: {
         flexDirection: 'row',
@@ -32,9 +31,13 @@ export const styles = StyleSheet.create({
       },
       tittle: {
         width: '100%',
-        backgroundColor: 'lightblue',
         textAlign: 'center',
         fontSize: 20,
         fontWeight: 'bold',
+      },
+      text: {
+        fontSize:20, 
+        fontWeight:'bold', 
+        color:'white'
       }
 })
